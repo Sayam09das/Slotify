@@ -120,7 +120,7 @@ const HeaderSection = () => {
                             className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4"
                         >
                             <motion.a
-                                href="#get-started"
+                                href="/register"
                                 whileHover={{ scale: 1.03, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#4f39f6] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-md transition-colors duration-200 hover:bg-[#4230d4] w-full sm:w-auto"
@@ -130,7 +130,7 @@ const HeaderSection = () => {
                             </motion.a>
 
                             <motion.a
-                                href="#learn-more"
+                                href="/learn-more"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium text-gray-700 transition-all duration-200 hover:border-[#4f39f6] hover:text-[#4f39f6] w-full sm:w-auto"

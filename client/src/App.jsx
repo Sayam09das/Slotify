@@ -16,6 +16,7 @@ import UserRegister from "./Auth/UserRegister";
 import Forgetpassword from "./Auth/Forgetpassword";
 import OTP from "./Auth/OTP";
 import ConfirmPAssword from "./Auth/ConfirmPAssword";
+import LearnMore from "./components/GetStarted/Home/LearnMore";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
 
       {/* 🔐 Auth layout (NO Navbar/Footer) */}
       <Route element={<AuthLayout />}>
+        <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register" element={<UserRegister />} />

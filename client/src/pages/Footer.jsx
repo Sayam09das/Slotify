@@ -22,14 +22,14 @@ const Footer = () => {
 
     const footerLinks = {
         product: [
-            { name: 'Home', href: '#' },
-            { name: 'Book Slot', href: '#' },
-            { name: 'How It Works', href: '#' }
+            { name: 'Home', href: '/' },
+            { name: 'Book Slot', href: '/book' },
+            { name: 'How It Works', href: '/how-it-works' }
         ],
         support: [
-            { name: 'Support', href: '#' },
-            { name: 'Admin', href: '#' },
-            { name: 'Login', href: '#' }
+            { name: 'Support', href: '/support' },
+            { name: 'Admin', href: '/admin' },
+            { name: 'Login', href: '/login' }
         ]
     };
 
