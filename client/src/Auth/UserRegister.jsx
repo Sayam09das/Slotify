@@ -141,8 +141,8 @@ const UserRegister = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     className={`fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 ${notification.type === 'success'
-                            ? 'bg-green-50 border border-green-200'
-                            : 'bg-red-50 border border-red-200'
+                        ? 'bg-green-50 border border-green-200'
+                        : 'bg-red-50 border border-red-200'
                         }`}
                 >
                     <span className={`text-sm font-medium ${notification.type === 'success' ? 'text-green-800' : 'text-red-800'
@@ -186,8 +186,8 @@ const UserRegister = () => {
                                     onChange={(e) => handleInputChange('fullName', e.target.value)}
                                     placeholder="John Doe"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.fullName
-                                            ? 'border-red-300 focus:ring-red-200'
-                                            : 'border-gray-300 focus:ring-blue-200'
+                                        ? 'border-red-300 focus:ring-red-200'
+                                        : 'border-gray-300 focus:ring-blue-200'
                                         }`}
                                     disabled={isLoading}
                                 />
@@ -211,8 +211,8 @@ const UserRegister = () => {
                                     onChange={(e) => handleInputChange('email', e.target.value)}
                                     placeholder="you@example.com"
                                     className={`w-full pl-10 pr-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.email
-                                            ? 'border-red-300 focus:ring-red-200'
-                                            : 'border-gray-300 focus:ring-blue-200'
+                                        ? 'border-red-300 focus:ring-red-200'
+                                        : 'border-gray-300 focus:ring-blue-200'
                                         }`}
                                     disabled={isLoading}
                                 />
@@ -236,8 +236,8 @@ const UserRegister = () => {
                                     onChange={(e) => handleInputChange('password', e.target.value)}
                                     placeholder="Create a strong password"
                                     className={`w-full pl-10 pr-12 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.password
-                                            ? 'border-red-300 focus:ring-red-200'
-                                            : 'border-gray-300 focus:ring-blue-200'
+                                        ? 'border-red-300 focus:ring-red-200'
+                                        : 'border-gray-300 focus:ring-blue-200'
                                         }`}
                                     disabled={isLoading}
                                 />
@@ -283,8 +283,8 @@ const UserRegister = () => {
                                     onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
                                     placeholder="Confirm your password"
                                     className={`w-full pl-10 pr-12 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.confirmPassword
-                                            ? 'border-red-300 focus:ring-red-200'
-                                            : 'border-gray-300 focus:ring-blue-200'
+                                        ? 'border-red-300 focus:ring-red-200'
+                                        : 'border-gray-300 focus:ring-blue-200'
                                         }`}
                                     disabled={isLoading}
                                 />
@@ -330,15 +330,16 @@ const UserRegister = () => {
                         {/* Login Link */}
                         <motion.div variants={itemVariants} className="text-center pt-2">
                             <span className="text-sm text-gray-600">Already have an account? </span>
-                            <button
-                                type="button"
-                                className="text-sm font-medium hover:underline transition-all"
-                                style={{ color: '#4f39f6' }}
-                                disabled={isLoading}
+
+                            <a
+                                href="/login"
+                                className={`text-sm font-medium transition-all hover:underline cursor-pointer ${isLoading ? "pointer-events-none opacity-50 cursor-not-allowed" : ""}`}
+                                style={{ color: "#4f39f6" }}
                             >
                                 Login
-                            </button>
+                            </a>
                         </motion.div>
+
                     </div>
                 </div>
             </motion.div>

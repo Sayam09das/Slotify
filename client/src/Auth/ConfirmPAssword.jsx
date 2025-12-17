@@ -84,9 +84,7 @@ const ConfirmPassword = () => {
         }, 2000);
     };
 
-    const handleBackToLogin = () => {
-        console.log('Navigate to login page');
-    };
+
 
     const containerVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -130,8 +128,8 @@ const ConfirmPassword = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     className={`fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 ${notification.type === 'success'
-                            ? 'bg-green-50 border border-green-200'
-                            : 'bg-red-50 border border-red-200'
+                        ? 'bg-green-50 border border-green-200'
+                        : 'bg-red-50 border border-red-200'
                         }`}
                 >
                     <span className={`text-sm font-medium ${notification.type === 'success' ? 'text-green-800' : 'text-red-800'
@@ -224,8 +222,8 @@ const ConfirmPassword = () => {
                                             onChange={(e) => handleInputChange('newPassword', e.target.value)}
                                             placeholder="Create a strong password"
                                             className={`w-full pl-10 pr-12 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.newPassword
-                                                    ? 'border-red-300 focus:ring-red-200'
-                                                    : 'border-gray-300 focus:ring-blue-200'
+                                                ? 'border-red-300 focus:ring-red-200'
+                                                : 'border-gray-300 focus:ring-blue-200'
                                                 }`}
                                             disabled={isLoading}
                                         />
@@ -272,8 +270,8 @@ const ConfirmPassword = () => {
                                             onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
                                             placeholder="Confirm your new password"
                                             className={`w-full pl-10 pr-12 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${errors.confirmPassword
-                                                    ? 'border-red-300 focus:ring-red-200'
-                                                    : 'border-gray-300 focus:ring-blue-200'
+                                                ? 'border-red-300 focus:ring-red-200'
+                                                : 'border-gray-300 focus:ring-blue-200'
                                                 }`}
                                             disabled={isLoading}
                                         />
@@ -318,16 +316,15 @@ const ConfirmPassword = () => {
 
                                 {/* Back to Login Link */}
                                 <motion.div variants={itemVariants} className="text-center pt-2">
-                                    <button
-                                        type="button"
-                                        onClick={handleBackToLogin}
-                                        className="text-sm font-medium hover:underline transition-all"
-                                        style={{ color: '#4f39f6' }}
-                                        disabled={isLoading}
+                                    <a
+                                        href="/login"
+                                        className={`text-sm font-medium transition-all hover:underline cursor-pointer ${isLoading ? "pointer-events-none opacity-50 cursor-not-allowed" : ""}`}
+                                        style={{ color: "#4f39f6" }}
                                     >
                                         Back to Login
-                                    </button>
+                                    </a>
                                 </motion.div>
+
                             </div>
                         </>
                     )}

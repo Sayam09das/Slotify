@@ -81,8 +81,8 @@ const Forgetpassword = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
                     className={`fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg flex items-center gap-3 ${notification.type === 'success'
-                            ? 'bg-green-50 border border-green-200'
-                            : 'bg-red-50 border border-red-200'
+                        ? 'bg-green-50 border border-green-200'
+                        : 'bg-red-50 border border-red-200'
                         }`}
                 >
                     <span className={`text-sm font-medium ${notification.type === 'success' ? 'text-green-800' : 'text-red-800'
@@ -175,8 +175,8 @@ const Forgetpassword = () => {
                                         onKeyPress={(e) => e.key === 'Enter' && handleSendOTP(e)}
                                         placeholder="you@example.com"
                                         className={`w-full pl-10 pr-4 py-3 border rounded-lg text-sm focus:outline-none focus:ring-2 transition-all ${error
-                                                ? 'border-red-300 focus:ring-red-200'
-                                                : 'border-gray-300 focus:ring-blue-200'
+                                            ? 'border-red-300 focus:ring-red-200'
+                                            : 'border-gray-300 focus:ring-blue-200'
                                             }`}
                                         disabled={isLoading}
                                     />
@@ -209,17 +209,23 @@ const Forgetpassword = () => {
 
                             {/* Back to Login Link */}
                             <motion.div variants={itemVariants} className="text-center pt-2">
-                                <button
-                                    type="button"
-                                    onClick={handleBackToLogin}
-                                    className="inline-flex items-center gap-2 text-sm font-medium hover:underline transition-all"
-                                    style={{ color: '#4f39f6' }}
-                                    disabled={isLoading}
+                                <a
+                                    href="/login"
+                                    onClick={(e) => {
+                                        if (isLoading) {
+                                            e.preventDefault();
+                                        } else {
+                                            handleBackToLogin?.();
+                                        }
+                                    }}
+                                    className={`inline-flex items-center gap-2 text-sm font-medium transition-all hover:underline cursor-pointer ${isLoading ? "pointer-events-none opacity-50 cursor-not-allowed" : ""}`}
+                                    style={{ color: "#4f39f6" }}
                                 >
                                     <ArrowLeft className="w-4 h-4" strokeWidth={2} />
                                     <span>Back to Login</span>
-                                </button>
+                                </a>
                             </motion.div>
+
                         </div>
                     )}
                 </div>

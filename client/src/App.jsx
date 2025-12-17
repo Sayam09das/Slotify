@@ -18,6 +18,8 @@ import OTP from "./Auth/OTP";
 import ConfirmPAssword from "./Auth/ConfirmPAssword";
 import LearnMore from "./components/GetStarted/Home/LearnMore";
 
+import AdminRoutes from "./pages/AdminRoutes";
+
 const App = () => {
   return (
     <Routes>
@@ -35,11 +37,15 @@ const App = () => {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/register" element={<UserRegister />} />
-        <Route path="/forgetpassword" element={<Forgetpassword />} />
+        <Route path="/forgot-password" element={<Forgetpassword />} />
         <Route path="/otp-verification" element={<OTP />} />
         <Route path="/confrim-password" element={<ConfirmPAssword />} />
       </Route>
-    </Routes>
+
+      <Route element={<AdminRoutes />}>
+        <Route path="/admin-dasboard" element={<AdminRoutes />} />
+      </Route>
+    </Routes >
   );
 };
 
