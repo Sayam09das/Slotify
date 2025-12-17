@@ -18,7 +18,8 @@ import OTP from "./Auth/OTP";
 import ConfirmPAssword from "./Auth/ConfirmPAssword";
 import LearnMore from "./components/GetStarted/Home/LearnMore";
 
-import AdminRoutes from "./pages/AdminRoutes";
+import AdminRoutes from "./pages/AdminRoutes/AdminRoutes";
+import SlotRoutes from "./pages/AdminRoutes/SlotRoutes";
 
 const App = () => {
   return (
@@ -43,7 +44,10 @@ const App = () => {
       </Route>
 
       <Route element={<AdminRoutes />}>
-        <Route path="/admin-dasboard" element={<AdminRoutes />} />
+        <Route path="/admin/dashboard" element={<AdminRoutes />} />
+      </Route>
+      <Route element={<SlotRoutes />}>
+        <Route path="/admin/slots" element={<SlotRoutes />} />
       </Route>
     </Routes >
   );
