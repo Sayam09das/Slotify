@@ -48,13 +48,6 @@ const SlotUnavailable = () => {
         }
     };
 
-    const handleChooseAnother = () => {
-        window.location.href = '/book-slot';
-    };
-
-    const handleBackHome = () => {
-        window.location.href = '/';
-    };
 
     return (
         <section className="bg-white min-h-screen flex items-center justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
@@ -155,10 +148,9 @@ const SlotUnavailable = () => {
                 >
                     {/* Primary Button */}
                     <motion.button
-                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-black text-white font-semibold rounded-lg text-sm sm:text-base hover:bg-gray-800 transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-md"
+                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-black text-white font-semibold rounded-lg text-sm sm:text-base hover:bg-gray-800 transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-md cursor-not-allowed"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={handleChooseAnother}
                     >
                         <RefreshCw className="w-5 h-5" strokeWidth={2} />
                         <span>Choose Another Slot</span>
@@ -166,10 +158,9 @@ const SlotUnavailable = () => {
 
                     {/* Secondary Button */}
                     <motion.button
-                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-700 font-medium rounded-lg text-sm sm:text-base border border-gray-300 hover:border-gray-400 hover:text-black transition-all duration-200 inline-flex items-center justify-center gap-2"
+                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-700 font-medium rounded-lg text-sm sm:text-base border border-gray-300 hover:border-gray-400 hover:text-black transition-all duration-200 inline-flex items-center justify-center gap-2 cursor-not-allowed"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={handleBackHome}
                     >
                         <ArrowLeft className="w-5 h-5" strokeWidth={2} />
                         <span>Back to Home</span>

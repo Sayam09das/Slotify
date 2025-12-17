@@ -189,10 +189,10 @@ const Success = () => {
                 >
                     {/* Primary Button */}
                     <motion.button
-                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#4f39f6] text-white font-semibold rounded-lg text-sm sm:text-base hover:bg-[#4230d4] transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-md"
+                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-[#4f39f6] text-white font-semibold rounded-lg text-sm sm:text-base hover:bg-[#4230d4] transition-colors duration-200 inline-flex items-center justify-center gap-2 shadow-md cursor-not-allowed"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => window.location.href = '/'}
+                        
                     >
                         <Home className="w-5 h-5" strokeWidth={2} />
                         <span>Back to Home</span>
@@ -200,10 +200,9 @@ const Success = () => {
 
                     {/* Secondary Button */}
                     <motion.button
-                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-700 font-medium rounded-lg text-sm sm:text-base border border-gray-300 hover:border-gray-400 hover:text-black transition-all duration-200 inline-flex items-center justify-center gap-2"
+                        className="flex-1 px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-gray-700 font-medium rounded-lg text-sm sm:text-base border border-gray-300 hover:border-gray-400 hover:text-black transition-all duration-200 inline-flex items-center justify-center gap-2 cursor-not-allowed"
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        onClick={() => window.location.href = '/book-slot'}
                     >
                         <Plus className="w-5 h-5" strokeWidth={2} />
                         <span>Book Another Slot</span>
