@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, Lock, ArrowRight } from 'lucide-react';
+import { Highlighter } from "@/components/ui/highlighter"
 
 const Works = () => {
     const steps = [
@@ -129,12 +130,35 @@ const Works = () => {
                             Simple Process
                         </span>
                     </motion.div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 bg-gradient-to-r from-gray-900 via-indigo-500 to-indigo-900 bg-clip-text text-transparent leading-tight px-4">
-                        How It Works
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+                        <Highlighter
+                            action="underline"
+                            color="#F39EB6"      // very light indigo
+                            strokeWidth={3}
+                            animationDuration={600}
+                            isView
+                        >
+                            <span className="bg-gradient-to-r  from-indigo-600 via-indigo-500 to-indigo-600 bg-clip-text text-transparent">
+                                How It Works
+                            </span>
+                        </Highlighter>
                     </h2>
+
+
                     <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
-                        Simple three-step process to manage your appointments efficiently and prevent double bookings
+                        Simple{" "}
+                        <Highlighter
+                            action="underline"
+                            color="#91C6BC"   // very light gray
+                            strokeWidth={2}
+                            animationDuration={500}
+                            isView
+                        >
+                            three-step process
+                        </Highlighter>{" "}
+                        to manage your appointments efficiently and prevent double bookings
                     </p>
+
                 </motion.div>
 
                 {/* Steps Container */}

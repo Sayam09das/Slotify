@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Scissors, Briefcase, Store } from 'lucide-react';
+import { Highlighter } from "@/components/ui/highlighter"
 
 const Management = () => {
     const audiences = [
@@ -73,8 +74,18 @@ const Management = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={headerVariants}
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-500 mb-3 sm:mb-4">
-                        Who It's For
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+                        <Highlighter
+                            action="underline"
+                            color="#c7d2fe"      // very light indigo
+                            strokeWidth={3}
+                            animationDuration={600}
+                            isView
+                        >
+                            <span className="bg-gradient-to-r  from-indigo-600 via-indigo-500 to-indigo-600 bg-clip-text text-transparent">
+                                Who It's For
+                            </span>
+                        </Highlighter>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4 leading-relaxed">
                         Built for time-based service businesses that value efficiency and professionalism

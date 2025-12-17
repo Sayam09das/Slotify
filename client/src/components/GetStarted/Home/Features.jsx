@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Clock, Calendar, Layout } from 'lucide-react';
+import { Highlighter } from "@/components/ui/highlighter"
 
 const Features = () => {
     const features = [
@@ -73,12 +74,34 @@ const Features = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={headerVariants}
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-500 mb-3 sm:mb-4">
-                        Key Features
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight px-4">
+                        <Highlighter
+                            action="underline"
+                            color="#B8DB80"
+                            strokeWidth={3}
+                            animationDuration={600}
+                            isView
+                        >
+                            <span className="bg-gradient-to-r  from-indigo-600 via-indigo-500 to-indigo-600 bg-clip-text text-transparent">
+                                Key Features
+                            </span>
+                        </Highlighter>
+
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-                        Everything you need to manage appointments efficiently and professionally
+                        Everything you need to manage{" "}
+                        <Highlighter
+                            action="underline"
+                            color="#F39EB6"   // very light gray
+                            strokeWidth={2}
+                            animationDuration={450}
+                            isView
+                        >
+                            appointments efficiently
+                        </Highlighter>{" "}
+                        and professionally
                     </p>
+
                 </motion.div>
 
                 {/* Features Grid */}
