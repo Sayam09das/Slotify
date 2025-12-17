@@ -1,16 +1,137 @@
-# React + Vite
+# Slotify Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern slot booking and management system built with React and Vite. Slotify provides an intuitive interface for both users and administrators to manage slot bookings efficiently.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication**: Secure login/register system with OTP verification
+- **Dual Dashboard**: Separate interfaces for users and administrators
+- **Slot Booking**: Interactive slot selection and booking confirmation
+- **Admin Management**: Complete administrative control over slots and bookings
+- **Responsive Design**: Mobile-first design with Tailwind CSS
+- **Modern UI**: Smooth animations with Framer Motion
+- **Real-time Notifications**: Toast notifications for user feedback
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: React 19.2.0
+- **Build Tool**: Vite 7.2.4
+- **Styling**: Tailwind CSS 4.1.18
+- **Routing**: React Router DOM 7.10.1
+- **Animations**: Framer Motion 12.23.26
+- **Icons**: Lucide React 0.561.0
+- **Notifications**: React Toastify 11.0.5
+- **Language**: JavaScript/TypeScript
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── Auth/                 # Authentication components
+│   ├── AdminLogin.jsx
+│   ├── UserLogin.jsx
+│   ├── UserRegister.jsx
+│   ├── Forgetpassword.jsx
+│   ├── OTP.jsx
+│   └── ConfirmPAssword.jsx
+├── components/
+│   ├── Dashboard/        # Dashboard components
+│   │   ├── AdminDasboard/
+│   │   └── UserDashboard/
+│   ├── GetStarted/       # Landing page sections
+│   │   ├── Home/
+│   │   ├── BookSlot/
+│   │   ├── HOWITWORKS/
+│   │   └── Support/
+│   ├── lib/              # Utility functions
+│   └── ui/               # Reusable UI components
+├── layouts/              # Layout components
+├── pages/                # Route components
+├── App.jsx
+└── main.jsx
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Slotify/client
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📜 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🎯 Key Components
+
+### Authentication System
+- **User Registration/Login**: Complete user authentication flow
+- **Admin Login**: Separate admin authentication
+- **Password Recovery**: Forgot password with OTP verification
+
+### Dashboard Features
+- **User Dashboard**: Personal booking management
+- **Admin Dashboard**: System-wide management interface
+- **Booking System**: Slot selection and confirmation
+
+### Landing Pages
+- **Home**: Feature showcase and call-to-action
+- **How It Works**: Process explanation and workflow
+- **Support**: FAQ and contact information
+
+## 🎨 UI Components
+
+The project includes custom UI components built with:
+- Animated gradient text
+- Typing animations
+- Word rotation effects
+- Syntax highlighting
+- Smooth transitions with Framer Motion
+
+## 🚀 Deployment
+
+The project is configured for deployment on Vercel with the included `vercel.json` configuration.
+
+To deploy:
+```bash
+npm run build
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 📄 License
+
+This project is private and proprietary.
+
+---
+
+Built with ❤️ using React + Vite
