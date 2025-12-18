@@ -1,8 +1,8 @@
-import Message from "../models/Message.js";
-import Slot from "../models/Slot.js";
+const Message = require("../models/Message");
+const Slot = require("../models/Slot");
 
 // Get messages for a slot (only if booked)
-export const getMessagesBySlot = async (req, res) => {
+const getMessagesBySlot = async (req, res) => {
     try {
         const { slotId } = req.params;
 
@@ -22,10 +22,14 @@ export const getMessagesBySlot = async (req, res) => {
 };
 
 // Send message (admin or user)
-export const sendMessage = async (req, res) => {
+const sendMessage = async (req, res) => {
     try {
         const { slotId } = req.params;
         const { message } = req.body;
+
+        if (!message || !message.trim()) {
+            return res.status(400).json({ message: "Message cannot be empty" });
+        }
 
         const slot = await Slot.findById(slotId);
         if (!slot || slot.status !== "booked") {
@@ -45,4 +49,9 @@ export const sendMessage = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Failed to send message" });
     }
+};
+
+module.exports = {
+    getMessagesBySlot,
+    sendMessage,
 };

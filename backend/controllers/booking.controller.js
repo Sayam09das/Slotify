@@ -1,11 +1,15 @@
-import Booking from "../models/Booking.js";
-import Slot from "../models/Slot.js";
+const Booking = require("../models/Booking");
+const Slot = require("../models/Slot");
 
 // USER: Create booking (slot locking logic)
-export const createBooking = async (req, res) => {
+const createBooking = async (req, res) => {
     try {
         const { slotId } = req.body;
         const userId = req.user.id;
+
+        if (!slotId) {
+            return res.status(400).json({ message: "Slot ID is required" });
+        }
 
         const slot = await Slot.findById(slotId);
 
@@ -39,7 +43,7 @@ export const createBooking = async (req, res) => {
 };
 
 // USER: Get my bookings
-export const getMyBookings = async (req, res) => {
+const getMyBookings = async (req, res) => {
     try {
         const bookings = await Booking.find({ userId: req.user.id })
             .populate("slotId")
@@ -49,4 +53,9 @@ export const getMyBookings = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Failed to fetch bookings" });
     }
+};
+
+module.exports = {
+    createBooking,
+    getMyBookings,
 };

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const slotSchema = new mongoose.Schema(
     {
@@ -30,4 +30,6 @@ const slotSchema = new mongoose.Schema(
 // Prevent duplicate slots (same date + time)
 slotSchema.index({ date: 1, time: 1 }, { unique: true });
 
-export default mongoose.model("Slot", slotSchema);
+const Slot = mongoose.model("Slot", slotSchema);
+
+module.exports = Slot;

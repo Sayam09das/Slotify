@@ -1,7 +1,7 @@
-import Slot from "../models/Slot.js";
+const Slot = require("../models/Slot");
 
 // ADMIN: Create a new slot
-export const createSlot = async (req, res) => {
+const createSlot = async (req, res) => {
     try {
         const { date, time } = req.body;
 
@@ -19,12 +19,13 @@ export const createSlot = async (req, res) => {
         if (error.code === 11000) {
             return res.status(409).json({ message: "Slot already exists" });
         }
+
         res.status(500).json({ message: "Failed to create slot" });
     }
 };
 
 // ADMIN: Get all slots (optionally by date)
-export const getAllSlots = async (req, res) => {
+const getAllSlots = async (req, res) => {
     try {
         const { date } = req.query;
 
@@ -39,7 +40,7 @@ export const getAllSlots = async (req, res) => {
 };
 
 // ADMIN: Delete a slot (only if not booked)
-export const deleteSlot = async (req, res) => {
+const deleteSlot = async (req, res) => {
     try {
         const slot = await Slot.findById(req.params.id);
 
@@ -59,4 +60,10 @@ export const deleteSlot = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Failed to delete slot" });
     }
+};
+
+module.exports = {
+    createSlot,
+    getAllSlots,
+    deleteSlot,
 };

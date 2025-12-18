@@ -1,8 +1,8 @@
-import Booking from "../models/Booking.js";
-import Slot from "../models/Slot.js";
+const Booking = require("../models/Booking");
+const Slot = require("../models/Slot");
 
 // ADMIN: Dashboard stats
-export const getDashboardStats = async (req, res) => {
+const getDashboardStats = async (req, res) => {
     try {
         const totalSlots = await Slot.countDocuments();
         const bookedSlots = await Slot.countDocuments({ status: "booked" });
@@ -19,7 +19,7 @@ export const getDashboardStats = async (req, res) => {
 };
 
 // ADMIN: Get all bookings
-export const getAllBookings = async (req, res) => {
+const getAllBookings = async (req, res) => {
     try {
         const bookings = await Booking.find()
             .populate("userId", "name email")
@@ -30,4 +30,9 @@ export const getAllBookings = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Failed to fetch bookings" });
     }
+};
+
+module.exports = {
+    getDashboardStats,
+    getAllBookings,
 };
