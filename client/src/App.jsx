@@ -20,6 +20,7 @@ import LearnMore from "./components/GetStarted/Home/LearnMore";
 
 import AdminRoutes from "./pages/AdminRoutes/AdminRoutes";
 import SlotRoutes from "./pages/AdminRoutes/SlotRoutes";
+import BookSlotRoutes from "./pages/BookSlotRoutes/BookSlotRoutes";
 
 const App = () => {
   return (
@@ -48,6 +49,9 @@ const App = () => {
       </Route>
       <Route element={<SlotRoutes />}>
         <Route path="/admin/slots" element={<SlotRoutes />} />
+      </Route>
+      <Route element={<BookSlotRoutes />}>
+        <Route path="/admin/bookings" element={<BookSlotRoutes />} />
       </Route>
     </Routes >
   );
