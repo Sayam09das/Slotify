@@ -4,10 +4,12 @@ import SummaryStats from '../../components/Dashboard/AdminDasboard/MainSection/S
 import DailySchedule from '../../components/Dashboard/AdminDasboard/MainSection/DailySchedule'
 import CreateSlot from '../../components/Dashboard/AdminDasboard/MainSection/CreateSlot'
 import RecentBookings from '../../components/Dashboard/AdminDasboard/MainSection/RecentBookings'
+import AdminHeader from '../../components/Dashboard/AdminDasboard/MainSection/AdminHeader'
 const AdminRoutes = () => {
   return (
     <div>
       <AdminNavbar />
+      <AdminHeader />
       <SummaryStats />
       <DailySchedule />
       <CreateSlot />

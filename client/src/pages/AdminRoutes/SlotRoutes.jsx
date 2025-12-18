@@ -11,7 +11,7 @@ const SlotRoutes = () => {
     <div>
         <SlotsHeader />
         <SlotFilters />
-        <SlotTable />
+        {/* <SlotTable /> */}
         <SlotDetailsPanel />
         <SlotChat />
     </div>
